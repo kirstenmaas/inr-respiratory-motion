@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from pca_utils import normalize_unit_norm
+from manifold.pca_utils import normalize_unit_norm
 from data_utils import read_data, correct_sign, plot_sota, get_annotations
 
 def annotate_video(video):
