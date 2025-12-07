@@ -6,10 +6,10 @@ dataset = 'XCAV'
 patient_number = 'CVAI-1207'
 dicom_number = 0
 
-div_ratio = 1
+div_ratio = 4
 use_mask = False
 
-n_iterations_d = 500
+n_iterations_d = 3000
 n_iterations_pf_i = 5
 save_every = -1
 
@@ -25,9 +25,9 @@ pos_enc_d = 'free'
 freq_basis_d = 5
 freq_sigma_d = 1
 freq_basis_d_s = 0
-max_iterations_d = 500
+max_iterations_d = 750
 
-smooth_weight = 5e-4
-accel_weight = 1e1
+smooth_weight = 1e-2
+accel_weight = 5e1
 period_weight = 1e-2
 lipschitz_weight_d = 1e-7
