@@ -1,0 +1,65 @@
+method: grid
+metric:
+  goal: minimize
+  name: test_loss
+parameters:
+  dataset:
+    values: ['FAME2']
+    # values: ['PIPPS']
+    # values: ['XCAV']
+  patient_number:
+    values: ['SCND006F', 'SCNI007F', 'SCNI008F', 'SCNI003F', 'SCND009F', 'SCNI005F']
+    # values: ['SCNI007F', 'SCNI003F']
+    # values: ['Medusa-annotate-00003', 'Medusa-annotate-00007', 'Medusa-annotate-00008', 'Medusa-annotate-00010', 'Medusa-annotate-00013', 'Medusa-annotate-00017', 'Medusa-annotate-00024']
+    # values: ['Medusa-annotate-00003', 'Medusa-annotate-00010', 'Medusa-annotate-00017']
+    # values: ['CVAI-1207', 'CVAI-1247', 'CVAI-1250', 'CVAI-1251', 'CVAI-1253', 'CVAI-1255', 'CVAI-1259']
+    # values: ['CVAI-1247', 'CVAI-1250', 'CVAI-1251', 'CVAI-1253', 'CVAI-1255']
+  dicom_number:
+    values: [0]
+    # values: [1, 2]
+    # values: [0, 1]
+  respiratory_signal:
+    values: ['own']
+  pos_enc_d:
+    # values: ['free']
+    values: ['fourier', 'free'] # ablation
+  freq_basis_d:
+    values: [5]
+  hidden_channels_d:
+    values: [256]
+  num_layers_d:
+    values: [4]
+  div_ratio:
+    values: [4]
+  nb_learning_frames:
+    values: [-1]
+  accel_weight:
+    values: [5e1]
+    # values: [5e1, 0] # ablation
+  period_weight:
+    # values: [1e-2] # for PIPPS, XCAV
+    values: [1e-3] # for FAME 2
+    # values: [1e-3, 0] # # ablation
+  smooth_weight:
+    values: [1e-2]
+    # values: [1e-2, 0] # ablation
+  n_iterations_d:
+    values: [3000]
+  max_iterations_d:
+    values: [750]
+  n_iterations_pf_i:
+    values: [5]
+  lr_d_gamma:
+    values: [1e-4]
+  batch_size:
+    values: [10240]
+  lipschitz_weight_d:
+    # values: [1e-7]
+    values: [1e-7, 0] # ablation
+  use_mask:
+    values: [False]
+    # values: [True]
+  
+early_terminate:
+  type: hyperband
+  min_iter: 7500

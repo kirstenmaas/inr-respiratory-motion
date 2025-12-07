@@ -1,0 +1,33 @@
+wandb_sweep_yaml = sweep.yaml
+project_name = project_name
+nb_learning_frames = -1
+
+dataset = 'XCAV'
+patient_number = 'CVAI-1207'
+dicom_number = 0
+
+div_ratio = 1
+use_mask = False
+
+n_iterations_d = 500
+n_iterations_pf_i = 5
+save_every = -1
+
+lr_d = 1e-2
+lr_d_gamma = 1e-4
+batch_size = 10240
+
+in_features = 2
+hidden_channels_d = 256
+num_layers_d = 4
+
+pos_enc_d = 'free'
+freq_basis_d = 5
+freq_sigma_d = 1
+freq_basis_d_s = 0
+max_iterations_d = 500
+
+smooth_weight = 5e-4
+accel_weight = 1e1
+period_weight = 1e-2
+lipschitz_weight_d = 1e-7
